@@ -1,23 +1,366 @@
-/* Importación de fuentes de Google Fonts */
+/* Fuentes */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital@1&display=swap');
 
-/* Estilos Generales */
-body {
-    font-family: 'DM Sans', sans-serif;
-    background-color: #FDF6F3; /* Color de fondo principal */
+/* Global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-/* Clases de Utilidad Personalizadas */
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background-color: #FDF6F3;
+    color: #111827;
+}
+
+/* Página */
+.page {
+    max-width: 1120px;          /* similar a max-w-7xl */
+    margin: 0 auto;
+    padding: 16px;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .page {
+        padding: 32px;
+    }
+}
+
+/* Utilidades */
 .serif-italic {
     font-family: 'Playfair Display', serif;
     font-style: italic;
 }
 
-/* Colores de las Tarjetas */
+/* Tarjetas */
 .card-light {
     background-color: #FDECE9;
 }
 
 .card-accent {
     background-color: #F9B5AC;
+}
+
+/* Header */
+.header {
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.logo-light {
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-bold {
+    font-weight: 700;
+}
+
+/* Navegación desktop */
+.nav {
+    display: none;
+    gap: 32px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #4B5563;
+}
+
+.nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #000000;
+}
+
+/* Botón menú móvil */
+.menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #1F2933;
+    cursor: pointer;
+}
+
+.icon-menu {
+    width: 24px;
+    height: 24px;
+}
+
+/* Mostrar menú en desktop */
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
+
+/* Grid principal */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    border-radius: 24px;
+    padding: 32px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flower {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    opacity: 0.3;
+    color: #FCA5A5;
+}
+
+.hero-title {
+    margin: 0;
+    margin-top: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+
+.hero-light {
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+/* Bio */
+.bio {
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.bio-img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+    object-fit: contain;
+}
+
+.bio-text {
+    margin: 0;
+    color: #4B5563;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Retrato */
+.portrait-wrapper {
+    border-radius: 24px;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .portrait-wrapper {
+        height: auto;
+        flex: 1;
+    }
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contacto */
+.contact {
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.contact:hover {
+    filter: brightness(0.95);
+}
+
+.contact-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-label {
+    margin: 0;
+    width: 96px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+    color: #1F2933;
+}
+
+.icon-arrow {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.contact:hover .icon-arrow {
+    transform: translate(4px, -4px);
+}
+
+.contact-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* Proyectos */
+.projects {
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Proyecto principal */
+.project-main {
+    margin-bottom: 24px;
+}
+
+.project-main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.icon-small-arrow {
+    width: 16px;
+    height: 16px;
+}
+
+.project-main-image-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 192px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.project-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Lista de proyectos */
+.project-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-item {
+    border-top: 1px solid rgba(248, 113, 113, 0.5);
+    padding-top: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.project-item h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.project-item:hover {
+    transform: translateX(8px);
+}
+
+/* Footer redes */
+.footer {
+    border-radius: 24px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #4B5563;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: #000000;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        font-size: 0.75rem;
+    }
 }
