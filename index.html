@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Julia Huang</title>
+
+    <!-- Tailwind CSS (Vía CDN para funcionalidad rápida) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tu hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-4 md:p-8 min-h-screen text-gray-900">
+
+<!-- Contenedor Principal -->
+<div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <header class="card-light rounded-2xl px-6 py-5 flex justify-between items-center">
+        <div class="text-xl tracking-wide font-medium uppercase">
+            <span class="font-light italic font-serif">Julia</span> <span class="font-bold">Huang</span>
+        </div>
+        <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-600 uppercase tracking-wider">
+            <a href="#" class="hover:text-black transition">Proyectos</a>
+            <a href="#" class="hover:text-black transition">Sobre mí</a>
+            <a href="#" class="hover:text-black transition">Contacto</a>
+        </nav>
+        <!-- Icono Menú Móvil -->
+        <button class="md:hidden text-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Grid Bento Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Columna 1 (Izquierda) -->
+        <div class="space-y-6 flex flex-col">
+
+            <!-- Tarjeta Principal (Hero) -->
+            <div class="card-light rounded-3xl p-8 relative flex-grow flex flex-col justify-center min-h-[300px]">
+                <!-- Flor Decorativa SVG -->
+                <div class="absolute top-6 right-6 opacity-30 text-red-300">
+                    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M50 0 C60 25 75 25 100 50 C75 75 60 75 50 100 C40 75 25 75 0 50 C25 25 40 25 50 0 Z" />
+                        <path d="M50 10 C65 30 70 30 90 50 C70 70 65 70 50 90 C35 70 30 70 10 50 C30 30 35 30 50 10 Z" transform="rotate(45 50 50)"/>
+                        <circle cx="50" cy="50" r="10" />
+                    </svg>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-8">
+                    Artist Redefining <br>
+                    <span class="serif-italic font-light">Architecture</span> with <br>
+                    AI-Driven Design
+                </h1>
+            </div>
+
+            <!-- Tarjeta Bio -->
+            <div class="card-light rounded-3xl p-8">
+
+                <!-- IMAGEN REEMPLAZADA -->
+                <img src="assets/img.png" alt="Icono" class="w-10 h-10 mb-4 object-contain">
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Julia Huang es una artista innovadora de IA, reconocida por fusionar tecnología de vanguardia con expresión creativa. Con sede en LA, crea experiencias de arte digital únicas accesibles globalmente.
+                </p>
+            </div>
+        </div>
+
+        <!-- Columna 2 (Centro) -->
+        <div class="space-y-6 flex flex-col">
+            <!-- Imagen Retrato -->
+            <div class="rounded-3xl overflow-hidden h-[400px] md:h-auto md:flex-grow relative">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+                     alt="Retrato de Julia Huang"
+                     class="w-full h-full object-cover">
+            </div>
+
+            <!-- Tarjeta de Contacto -->
+            <div class="card-accent rounded-3xl p-8 flex flex-col justify-between h-[250px] relative group cursor-pointer transition hover:brightness-95">
+                <div class="flex justify-between items-start">
+                    <p class="text-xs uppercase tracking-wide font-medium text-gray-800 w-24">¿Tienes preguntas?</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform group-hover:-translate-y-1 group-hover:translate-x-1 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19L19 5M19 5H9M19 5V15" />
+                    </svg>
+                </div>
+                <h2 class="text-4xl font-medium">Contact me</h2>
+            </div>
+        </div>
+
+        <!-- Columna 3 (Derecha) -->
+        <div class="space-y-6 flex flex-col">
+
+            <!-- Lista de Proyectos -->
+            <div class="card-light rounded-3xl p-6 flex-grow flex flex-col">
+
+                <!-- Proyecto Destacado (Musea) -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-medium">Musea</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19L19 5M19 5H9M19 5V15" />
+                        </svg>
+                    </div>
+                    <div class="rounded-xl overflow-hidden h-48 w-full mb-6">
+                        <img src="assets/img_1.png"
+                             alt="Proyecto Musea"
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Items de la Lista -->
+                <div class="flex-grow space-y-4">
+                    <div class="border-t border-red-200/50 pt-4 group cursor-pointer">
+                        <h3 class="text-lg font-medium group-hover:translate-x-2 transition">Elara</h3>
+                    </div>
+                    <div class="border-t border-red-200/50 pt-4 group cursor-pointer">
+                        <h3 class="text-lg font-medium group-hover:translate-x-2 transition">Verve</h3>
+                    </div>
+                    <div class="border-t border-red-200/50 pt-4 group cursor-pointer">
+                        <h3 class="text-lg font-medium group-hover:translate-x-2 transition">Zephyr</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer / Redes Sociales -->
+            <div class="card-light rounded-3xl p-8 flex justify-between items-center text-[10px] md:text-xs font-bold text-gray-600 uppercase tracking-widest">
+                <a href="#" class="hover:text-black transition">Instagram</a>
+                <a href="#" class="hover:text-black transition">Twitter</a>
+                <a href="#" class="hover:text-black transition">LinkedIn</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
