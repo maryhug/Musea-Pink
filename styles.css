@@ -1,366 +1,478 @@
-/* Fuentes */
+/* ========================================
+   IMPORTACIÓN DE FUENTES
+   ======================================== */
+
+/* Importa fuentes de Google Fonts: DM Sans (varios pesos) y Playfair Display (cursiva) */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:ital@1&display=swap');
 
-/* Global */
+/* ========================================
+   RESET UNIVERSAL
+   ======================================== */
+
+/* Reset para todos los elementos y pseudo-elementos */
 *,
-*::before,
-*::after {
-    box-sizing: border-box;
+*::before, /* Pseudo-elemento antes del contenido */
+*::after { /* Pseudo-elemento después del contenido */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total */
 }
 
+/* ========================================
+   ESTILOS BASE
+   ======================================== */
+
+/* Estilos del body */
 body {
-    margin: 0;
-    font-family: 'DM Sans', sans-serif;
-    background-color: #FDF6F3;
-    color: #111827;
+    margin: 0; /* Elimina margen predeterminado */
+    font-family: 'DM Sans', sans-serif; /* Fuente principal DM Sans con fallback */
+    background-color: #FDF6F3; /* Fondo rosa muy claro/beige */
+    color: #111827; /* Color de texto gris muy oscuro */
 }
 
-/* Página */
+/* ========================================
+   CONTENEDOR DE PÁGINA
+   ======================================== */
+
+/* Contenedor principal de la página */
 .page {
-    max-width: 1120px;          /* similar a max-w-7xl */
-    margin: 0 auto;
-    padding: 16px;
-    min-height: 100vh;
+    max-width: 1120px; /* Ancho máximo de 1120px (equivalente a max-w-7xl en Tailwind) */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 16px; /* Relleno de 16px en todos los lados */
+    min-height: 100vh; /* Altura mínima del 100% del viewport (pantalla completa) */
 }
 
+/* Aumenta padding en tablet y desktop */
 @media (min-width: 768px) {
     .page {
-        padding: 32px;
+        padding: 32px; /* Relleno de 32px en todos los lados */
     }
 }
 
-/* Utilidades */
+/* ========================================
+   UTILIDADES
+   ======================================== */
+
+/* Clase para texto serif en cursiva */
 .serif-italic {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'Playfair Display', serif; /* Fuente Playfair Display con fallback serif */
+    font-style: italic; /* Estilo cursiva */
 }
 
-/* Tarjetas */
+/* ========================================
+   TARJETAS - VARIANTES DE FONDO
+   ======================================== */
+
+/* Tarjeta con fondo claro */
 .card-light {
-    background-color: #FDECE9;
+    background-color: #FDECE9; /* Fondo rosa muy claro */
 }
 
+/* Tarjeta con fondo de acento */
 .card-accent {
-    background-color: #F9B5AC;
+    background-color: #F9B5AC; /* Fondo rosa coral */
 }
 
-/* Header */
+/* ========================================
+   HEADER - CABECERA
+   ======================================== */
+
+/* Contenedor del header */
 .header {
-    border-radius: 16px;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: 16px; /* Esquinas redondeadas de 16px */
+    padding: 20px 24px; /* Relleno: 20px arriba/abajo, 24px laterales */
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye con espacio entre elementos */
 }
 
+/* Logo principal */
 .logo {
-    font-size: 1.25rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-size: 1.25rem; /* Tamaño de fuente de 1.25rem (20px) */
+    letter-spacing: 0.08em; /* Espaciado entre letras de 0.08em */
+    text-transform: uppercase; /* Transforma texto a mayúsculas */
+    font-weight: 500; /* Grosor medium */
 }
 
+/* Parte ligera del logo */
 .logo-light {
-    font-weight: 300;
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
+    font-weight: 300; /* Grosor light (ligero) */
+    font-style: italic; /* Estilo cursiva */
+    font-family: 'Playfair Display', serif; /* Fuente Playfair Display */
 }
 
+/* Parte bold del logo */
 .logo-bold {
-    font-weight: 700;
+    font-weight: 700; /* Grosor bold (negrita) */
 }
 
-/* Navegación desktop */
+/* ========================================
+   NAVEGACIÓN
+   ======================================== */
+
+/* Navegación principal (desktop) */
 .nav {
-    display: none;
-    gap: 32px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: #4B5563;
+    display: none; /* Oculto por defecto en móvil */
+    gap: 32px; /* Espacio de 32px entre enlaces */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño (14px) */
+    font-weight: 500; /* Grosor medium */
+    text-transform: uppercase; /* Transforma texto a mayúsculas */
+    letter-spacing: 0.16em; /* Espaciado entre letras de 0.16em */
+    color: #4B5563; /* Color gris medio */
 }
 
+/* Enlaces de navegación */
 .nav a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.2s ease;
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Hereda el color del padre */
+    transition: color 0.2s ease; /* Transición suave del color en 0.2 segundos */
 }
 
+/* Enlaces al pasar el mouse */
 .nav a:hover {
-    color: #000000;
+    color: #000000; /* Cambia a color negro */
 }
 
-/* Botón menú móvil */
+/* ========================================
+   BOTÓN MENÚ MÓVIL
+   ======================================== */
+
+/* Botón del menú hamburguesa */
 .menu-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    color: #1F2933;
-    cursor: pointer;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    padding: 0; /* Sin padding */
+    color: #1F2933; /* Color gris muy oscuro */
+    cursor: pointer; /* Cursor de mano */
 }
 
+/* Ícono del menú */
 .icon-menu {
-    width: 24px;
-    height: 24px;
+    width: 24px; /* Ancho de 24px */
+    height: 24px; /* Alto de 24px */
 }
 
-/* Mostrar menú en desktop */
+/* ========================================
+   NAVEGACIÓN RESPONSIVE
+   ======================================== */
+
+/* Muestra navegación en tablet/desktop */
 @media (min-width: 768px) {
     .nav {
-        display: flex;
+        display: flex; /* Muestra como flexbox */
     }
 
     .menu-btn {
-        display: none;
+        display: none; /* Oculta botón de menú */
     }
 }
 
-/* Grid principal */
+/* ========================================
+   GRID PRINCIPAL
+   ======================================== */
+
+/* Grid principal de la página */
 .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 24px;
+    display: grid; /* Activa grid layout */
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+    gap: 24px; /* Espacio de 24px entre celdas */
+    margin-top: 24px; /* Margen superior de 24px */
 }
 
+/* Columna del grid */
 .col {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Dirección vertical */
+    gap: 24px; /* Espacio de 24px entre elementos */
 }
 
+/* Grid de 3 columnas en tablet/desktop */
 @media (min-width: 768px) {
     .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas iguales con mínimo 0 */
     }
 }
 
-/* Hero */
+/* ========================================
+   HERO - SECCIÓN PRINCIPAL
+   ======================================== */
+
+/* Contenedor hero */
 .hero {
-    position: relative;
-    border-radius: 24px;
-    padding: 32px;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: relative; /* Contexto de posicionamiento para elementos absolutos */
+    border-radius: 24px; /* Esquinas redondeadas de 24px */
+    padding: 32px; /* Relleno de 32px en todos los lados */
+    min-height: 300px; /* Altura mínima de 300px */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Dirección vertical */
+    justify-content: center; /* Centra verticalmente */
 }
 
+/* Elemento decorativo (flor) */
 .flower {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    opacity: 0.3;
-    color: #FCA5A5;
+    position: absolute; /* Posicionamiento absoluto */
+    top: 24px; /* 24px desde arriba */
+    right: 24px; /* 24px desde la derecha */
+    opacity: 0.3; /* Transparencia del 30% */
+    color: #FCA5A5; /* Color rojo/rosa claro */
 }
 
+/* Título del hero */
 .hero-title {
-    margin: 0;
-    margin-top: 32px;
-    font-weight: 700;
-    line-height: 1.2;
-    font-size: 2rem;
+    margin: 0; /* Sin margen */
+    margin-top: 32px; /* Margen superior de 32px */
+    font-weight: 700; /* Grosor bold */
+    line-height: 1.2; /* Altura de línea compacta */
+    font-size: 2rem; /* Tamaño de fuente de 2rem (32px) */
 }
 
+/* Parte ligera del título hero */
 .hero-light {
-    font-weight: 300;
+    font-weight: 300; /* Grosor light */
 }
 
+/* Aumenta tamaño del título en tablet/desktop */
 @media (min-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3rem; /* Tamaño de fuente de 3rem (48px) */
     }
 }
 
-/* Bio */
+/* ========================================
+   BIO - BIOGRAFÍA
+   ======================================== */
+
+/* Contenedor de biografía */
 .bio {
-    border-radius: 24px;
-    padding: 32px;
+    border-radius: 24px; /* Esquinas redondeadas de 24px */
+    padding: 32px; /* Relleno de 32px en todos los lados */
 }
 
+/* Imagen de la bio */
 .bio-img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 16px;
-    object-fit: contain;
+    width: 40px; /* Ancho de 40px */
+    height: 40px; /* Alto de 40px */
+    margin-bottom: 16px; /* Margen inferior de 16px */
+    object-fit: contain; /* Mantiene proporciones sin recortar */
 }
 
+/* Texto de la bio */
 .bio-text {
-    margin: 0;
-    color: #4B5563;
-    font-size: 0.875rem;
-    line-height: 1.6;
+    margin: 0; /* Sin margen */
+    color: #4B5563; /* Color gris medio */
+    font-size: 0.875rem; /* Tamaño de fuente pequeño (14px) */
+    line-height: 1.6; /* Altura de línea */
 }
 
-/* Retrato */
+/* ========================================
+   RETRATO - IMAGEN DE PERFIL
+   ======================================== */
+
+/* Contenedor del retrato */
 .portrait-wrapper {
-    border-radius: 24px;
-    overflow: hidden;
-    height: 400px;
-    position: relative;
+    border-radius: 24px; /* Esquinas redondeadas de 24px */
+    overflow: hidden; /* Oculta contenido desbordado */
+    height: 400px; /* Alto fijo de 400px en móvil */
+    position: relative; /* Contexto de posicionamiento */
 }
 
+/* Ajusta altura en tablet/desktop */
 @media (min-width: 768px) {
     .portrait-wrapper {
-        height: auto;
-        flex: 1;
+        height: auto; /* Altura automática */
+        flex: 1; /* Ocupa espacio disponible */
     }
 }
 
+/* Imagen del retrato */
 .portrait-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    object-fit: cover; /* Recorta imagen para cubrir área sin distorsión */
+    display: block; /* Display en bloque */
 }
 
-/* Contacto */
+/* ========================================
+   CONTACTO
+   ======================================== */
+
+/* Tarjeta de contacto */
 .contact {
-    border-radius: 24px;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 250px;
-    cursor: pointer;
-    transition: filter 0.2s ease;
+    border-radius: 24px; /* Esquinas redondeadas de 24px */
+    padding: 32px; /* Relleno de 32px en todos los lados */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Dirección vertical */
+    justify-content: space-between; /* Distribuye con espacio entre elementos */
+    height: 250px; /* Alto fijo de 250px */
+    cursor: pointer; /* Cursor de mano */
+    transition: filter 0.2s ease; /* Transición suave del filtro */
 }
 
+/* Tarjeta de contacto al pasar el mouse */
 .contact:hover {
-    filter: brightness(0.95);
+    filter: brightness(0.95); /* Reduce brillo al 95% (oscurece ligeramente) */
 }
 
+/* Parte superior de la tarjeta de contacto */
 .contact-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: flex; /* Activa flexbox */
+    justify-content: space-between; /* Distribuye con espacio entre elementos */
+    align-items: flex-start; /* Alinea al inicio verticalmente */
 }
 
+/* Etiqueta de contacto */
 .contact-label {
-    margin: 0;
-    width: 96px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    font-weight: 500;
-    color: #1F2933;
+    margin: 0; /* Sin margen */
+    width: 96px; /* Ancho fijo de 96px */
+    font-size: 0.75rem; /* Tamaño de fuente pequeño (12px) */
+    text-transform: uppercase; /* Transforma texto a mayúsculas */
+    letter-spacing: 0.16em; /* Espaciado entre letras */
+    font-weight: 500; /* Grosor medium */
+    color: #1F2933; /* Color gris muy oscuro */
 }
 
+/* Ícono de flecha */
 .icon-arrow {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease;
+    width: 24px; /* Ancho de 24px */
+    height: 24px; /* Alto de 24px */
+    transition: transform 0.2s ease; /* Transición suave de transformación */
 }
 
+/* Flecha al pasar mouse sobre contacto */
 .contact:hover .icon-arrow {
-    transform: translate(4px, -4px);
+    transform: translate(4px, -4px); /* Desplaza 4px derecha, 4px arriba */
 }
 
+/* Título de contacto */
 .contact-title {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 500;
+    margin: 0; /* Sin margen */
+    font-size: 2rem; /* Tamaño de fuente grande (32px) */
+    font-weight: 500; /* Grosor medium */
 }
 
-/* Proyectos */
+/* ========================================
+   PROYECTOS
+   ======================================== */
+
+/* Contenedor de proyectos */
 .projects {
-    border-radius: 24px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    border-radius: 24px; /* Esquinas redondeadas de 24px */
+    padding: 24px; /* Relleno de 24px en todos los lados */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Dirección vertical */
+    flex: 1; /* Ocupa espacio disponible */
 }
 
-/* Proyecto principal */
+/* ========================================
+   PROYECTO PRINCIPAL
+   ======================================== */
+
+/* Proyecto principal destacado */
 .project-main {
-    margin-bottom: 24px;
+    margin-bottom: 24px; /* Margen inferior de 24px */
 }
 
+/* Header del proyecto principal */
 .project-main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye con espacio entre elementos */
+    margin-bottom: 16px; /* Margen inferior de 16px */
 }
 
+/* Título del proyecto */
 .project-title {
-    margin: 0;
-    font-size: 1.125rem;
-    font-weight: 500;
+    margin: 0; /* Sin margen */
+    font-size: 1.125rem; /* Tamaño de fuente de 1.125rem (18px) */
+    font-weight: 500; /* Grosor medium */
 }
 
+/* Ícono de flecha pequeña */
 .icon-small-arrow {
-    width: 16px;
-    height: 16px;
+    width: 16px; /* Ancho de 16px */
+    height: 16px; /* Alto de 16px */
 }
 
+/* Contenedor de imagen del proyecto principal */
 .project-main-image-wrapper {
-    border-radius: 16px;
-    overflow: hidden;
-    height: 192px;
-    width: 100%;
-    margin-bottom: 16px;
+    border-radius: 16px; /* Esquinas redondeadas de 16px */
+    overflow: hidden; /* Oculta contenido desbordado */
+    height: 192px; /* Alto fijo de 192px */
+    width: 100%; /* Ancho completo */
+    margin-bottom: 16px; /* Margen inferior de 16px */
 }
 
+/* Imagen del proyecto principal */
 .project-main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    object-fit: cover; /* Recorta imagen para cubrir área sin distorsión */
+    display: block; /* Display en bloque */
 }
+
+/* ========================================
+   LISTA DE PROYECTOS
+   ======================================== */
 
 /* Lista de proyectos */
 .project-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex: 1; /* Ocupa espacio disponible */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Dirección vertical */
+    gap: 16px; /* Espacio de 16px entre elementos */
 }
 
+/* Item individual de proyecto */
 .project-item {
-    border-top: 1px solid rgba(248, 113, 113, 0.5);
-    padding-top: 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    border-top: 1px solid rgba(248, 113, 113, 0.5); /* Borde superior rojo/rosa semi-transparente (50%) */
+    padding-top: 16px; /* Relleno superior de 16px */
+    cursor: pointer; /* Cursor de mano */
+    transition: transform 0.2s ease; /* Transición suave de transformación */
 }
 
+/* Título h3 del item de proyecto */
 .project-item h3 {
-    margin: 0;
-    font-size: 1.125rem;
-    font-weight: 500;
+    margin: 0; /* Sin margen */
+    font-size: 1.125rem; /* Tamaño de fuente de 1.125rem (18px) */
+    font-weight: 500; /* Grosor medium */
 }
 
+/* Item de proyecto al pasar el mouse */
 .project-item:hover {
-    transform: translateX(8px);
+    transform: translateX(8px); /* Desplaza 8px hacia la derecha */
 }
 
-/* Footer redes */
+/* ========================================
+   FOOTER - REDES SOCIALES
+   ======================================== */
+
+/* Footer con redes sociales */
 .footer {
-    border-radius: 24px;
-    padding: 24px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.625rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: #4B5563;
+    border-radius: 24px; /* Esquinas redondeadas de 24px */
+    padding: 24px 32px; /* Relleno: 24px arriba/abajo, 32px laterales */
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Distribuye con espacio entre elementos */
+    font-size: 0.625rem; /* Tamaño de fuente muy pequeño (10px) */
+    font-weight: 700; /* Grosor bold */
+    text-transform: uppercase; /* Transforma texto a mayúsculas */
+    letter-spacing: 0.18em; /* Espaciado entre letras */
+    color: #4B5563; /* Color gris medio */
 }
 
+/* Enlaces del footer */
 .footer a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.2s ease;
+    text-decoration: none; /* Sin subrayado */
+    color: inherit; /* Hereda color del padre */
+    transition: color 0.2s ease; /* Transición suave del color */
 }
 
+/* Enlaces del footer al pasar el mouse */
 .footer a:hover {
-    color: #000000;
+    color: #000000; /* Cambia a color negro */
 }
 
+/* Aumenta tamaño de fuente en tablet/desktop */
 @media (min-width: 768px) {
     .footer {
-        font-size: 0.75rem;
+        font-size: 0.75rem; /* Tamaño de fuente de 0.75rem (12px) */
     }
 }
