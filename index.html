@@ -1,56 +1,87 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Declaración de tipo de documento HTML5 -->
+<html lang="es"> <!-- Elemento raíz del documento, idioma español -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Julia Huang</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- ========================================
+         META INFORMACIÓN Y CONFIGURACIÓN
+         ======================================== -->
+    
+    <meta charset="UTF-8"> <!-- Codificación de caracteres UTF-8 (soporta todos los caracteres internacionales) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración responsive: ancho del dispositivo, escala inicial 1 (sin zoom) -->
+    <title>Portafolio de Julia Huang</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula hoja de estilos CSS externa -->
 </head>
+
 <body>
 
-<div class="page">
-    <!-- Header -->
+<!-- ========================================
+     CONTENEDOR PRINCIPAL DE LA PÁGINA
+     ======================================== -->
+
+<div class="page"> <!-- Contenedor principal con ancho máximo y centrado -->
+    
+    <!-- ========================================
+         HEADER - NAVEGACIÓN
+         ======================================== -->
+    
+    <!-- Header con logo y navegación -->
     <header class="header">
+        <!-- Logo compuesto por dos partes con estilos diferentes -->
         <div class="logo">
-            <span class="logo-light">Julia</span> <span class="logo-bold">Huang</span>
+            <span class="logo-light">Julia</span> <!-- Nombre en estilo light/cursiva -->
+            <span class="logo-bold">Huang</span> <!-- Apellido en estilo bold -->
         </div>
 
+        <!-- Navegación principal (visible solo en desktop) -->
         <nav class="nav">
-            <a href="#">Proyectos</a>
-            <a href="#">Sobre mí</a>
-            <a href="#">Contacto</a>
+            <a href="#">Proyectos</a> <!-- Enlace a sección de proyectos -->
+            <a href="#">Sobre mí</a> <!-- Enlace a sección acerca de -->
+            <a href="#">Contacto</a> <!-- Enlace a sección de contacto -->
         </nav>
 
-        <!-- Icono Menú Móvil -->
-        <button class="menu-btn" aria-label="Abrir menú">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16M4 18h16"
-                      stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Botón de menú hamburguesa para móvil -->
+        <button class="menu-btn" aria-label="Abrir menú"> <!-- aria-label describe la función del botón para lectores de pantalla -->
+            <!-- SVG del ícono de menú (3 líneas horizontales) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" viewBox="0 0 24 24"> <!-- xmlns define el espacio de nombres XML para SVG -->
+                <path d="M4 6h16M4 12h16M4 18h16" <!-- Tres líneas horizontales: línea superior (y=6), media (y=12), inferior (y=18) -->
+                      stroke="currentColor" stroke-width="2" <!-- stroke="currentColor" usa el color del texto actual, grosor de línea 2 -->
+                      stroke-linecap="round" stroke-linejoin="round" /> <!-- Extremos y uniones redondeadas -->
             </svg>
         </button>
     </header>
 
-    <!-- Grid Bento Layout -->
+    <!-- ========================================
+         GRID BENTO LAYOUT - DISEÑO PRINCIPAL
+         ======================================== -->
+    
+    <!-- Grid principal con layout tipo Bento (estilo japonés de cajas organizadas) -->
     <div class="grid">
-        <!-- Columna 1 -->
+        
+        <!-- ========================================
+             COLUMNA 1 - HERO Y BIO
+             ======================================== -->
+        
         <div class="col col-1">
-            <!-- Hero -->
+            
+            <!-- === SECCIÓN HERO === -->
+            <!-- Tarjeta principal con título destacado -->
             <div class="card card-light hero">
+                <!-- Elemento decorativo (flor) posicionado absolutamente -->
                 <div class="flower">
-                    <img src="assets/img_1.png" alt="Icono">
+                    <img src="assets/img_1.png" alt="Icono"> <!-- Imagen decorativa -->
                 </div>
 
+                <!-- Título principal del portafolio -->
                 <h1 class="hero-title">
-                    Artist Redefining <br>
-                    <span class="serif-italic hero-light">Architecture</span> with <br>
+                    Artist Redefining <br> <!-- br: salto de línea -->
+                    <span class="serif-italic hero-light">Architecture</span> with <br> <!-- Palabra "Architecture" con estilo serif cursiva y peso ligero -->
                     AI-Driven Design
                 </h1>
             </div>
 
-            <!-- Bio -->
+            <!-- === SECCIÓN BIO === -->
+            <!-- Tarjeta de biografía -->
             <div class="card card-light bio">
-                <img src="assets/img.png" alt="Icono" class="bio-img">
+                <img src="assets/img.png" alt="Icono" class="bio-img"> <!-- Ícono decorativo pequeño -->
                 <p class="bio-text">
                     Julia Huang es una artista innovadora de IA, reconocida por fusionar tecnología de vanguardia
                     con expresión creativa. Con sede en LA, crea experiencias de arte digital únicas accesibles globalmente.
@@ -58,72 +89,96 @@
             </div>
         </div>
 
-        <!-- Columna 2 -->
+        <!-- ========================================
+             COLUMNA 2 - RETRATO Y CONTACTO
+             ======================================== -->
+        
         <div class="col col-2">
-            <!-- Retrato -->
+            
+            <!-- === SECCIÓN RETRATO === -->
+            <!-- Contenedor de imagen de retrato -->
             <div class="portrait-wrapper">
                 <img
-                        src="assets/women.svg"
-                        alt="Retrato de Julia Huang"
-                        class="portrait-img">
+                        src="assets/women.svg" <!-- Ruta de la imagen SVG -->
+                        alt="Retrato de Julia Huang" <!-- Texto alternativo descriptivo para accesibilidad -->
+                        class="portrait-img"> <!-- Clase para estilos de imagen -->
             </div>
 
-            <!-- Contacto -->
-            <div class="card card-accent contact">
+            <!-- === SECCIÓN CONTACTO === -->
+            <!-- Tarjeta de contacto interactiva -->
+            <div class="card card-accent contact"> <!-- card-accent aplica color de acento (rosa coral) -->
+                <!-- Parte superior con etiqueta y flecha -->
                 <div class="contact-top">
-                    <p class="contact-label">¿Tienes preguntas?</p>
+                    <p class="contact-label">¿Tienes preguntas?</p> <!-- Etiqueta pequeña -->
+                    <!-- SVG de flecha diagonal (ícono de enlace externo) -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M19 5H9M19 5V15"
-                              stroke="currentColor" stroke-width="2"
-                              stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5 19L19 5M19 5H9M19 5V15" <!-- Dibuja flecha diagonal hacia arriba-derecha -->
+                              stroke="currentColor" stroke-width="2" <!-- Color actual del texto, grosor 2 -->
+                              stroke-linecap="round" stroke-linejoin="round" /> <!-- Extremos y uniones redondeadas -->
                     </svg>
                 </div>
-                <h2 class="contact-title">Contact me</h2>
+                <h2 class="contact-title">Contact me</h2> <!-- Título grande de la tarjeta -->
             </div>
         </div>
 
-        <!-- Columna 3 -->
+        <!-- ========================================
+             COLUMNA 3 - PROYECTOS Y REDES
+             ======================================== -->
+        
         <div class="col col-3">
-            <!-- Proyectos -->
+            
+            <!-- === SECCIÓN PROYECTOS === -->
+            <!-- Tarjeta de proyectos -->
             <div class="card card-light projects">
-                <!-- Proyecto principal -->
+                
+                <!-- Proyecto principal destacado -->
                 <div class="project-main">
+                    <!-- Header del proyecto con título y flecha -->
                     <div class="project-main-header">
-                        <h3 class="project-title">Musea</h3>
+                        <h3 class="project-title">Musea</h3> <!-- Nombre del proyecto -->
+                        <!-- SVG de flecha pequeña -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon-small-arrow" viewBox="0 0 24 24">
-                            <path d="M5 19L19 5M19 5H9M19 5V15"
+                            <path d="M5 19L19 5M19 5H9M19 5V15" <!-- Flecha diagonal -->
                                   stroke="currentColor" stroke-width="2"
                                   stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
+                    
+                    <!-- Contenedor de imagen del proyecto -->
                     <div class="project-main-image-wrapper">
                         <img src="assets/lilcoderman_pink_chair_sitting_on_table.svg" alt="Proyecto Musea" class="project-main-image">
                     </div>
                 </div>
 
-                <!-- Lista de proyectos -->
+                <!-- Lista de proyectos adicionales -->
                 <div class="project-list">
+                    <!-- Item de proyecto 1 -->
                     <div class="project-item">
-                        <h3>Elara</h3>
+                        <h3>Elara</h3> <!-- Nombre del proyecto -->
                     </div>
+                    
+                    <!-- Item de proyecto 2 -->
                     <div class="project-item">
-                        <h3>Verve</h3>
+                        <h3>Verve</h3> <!-- Nombre del proyecto -->
                     </div>
+                    
+                    <!-- Item de proyecto 3 -->
                     <div class="project-item">
-                        <h3>Zephyr</h3>
+                        <h3>Zephyr</h3> <!-- Nombre del proyecto -->
                     </div>
                 </div>
             </div>
 
-            <!-- Footer redes -->
+            <!-- === FOOTER - REDES SOCIALES === -->
+            <!-- Tarjeta con enlaces a redes sociales -->
             <div class="card card-light footer">
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a> <!-- Enlace a Instagram -->
+                <a href="#">Twitter</a> <!-- Enlace a Twitter -->
+                <a href="#">LinkedIn</a> <!-- Enlace a LinkedIn -->
             </div>
         </div>
-    </div>
-</div>
+    </div> <!-- Fin del grid -->
+</div> <!-- Fin del contenedor page -->
 
 </body>
 </html>
